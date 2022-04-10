@@ -1,4 +1,4 @@
-import '../../App.css'
+import './img.css';
 
 // const Result = () => {
 //   const loop = data.map((img) => {
@@ -14,12 +14,13 @@ import '../../App.css'
 //   return loop;
 // }
 
-const gifResult = ({ gif }) => {
-  return gif.map((img) => {
+const GifComponent = ({ gifs }) => {
+  console.log(gifs)
+  return gifs.map((img) => {
     return (
       img !== undefined && (
-        <div class="result-wrapper">
-          <img src={img.images.fixed_width.url} alt={img.title}/>
+        <div className="result-wrapper">
+          <img src={img.images.fixed_width.url} alt={img.title} />
           <p>Title : {img.title}</p>
         </div>
       )
@@ -27,4 +28,4 @@ const gifResult = ({ gif }) => {
   });
 }
 
-export default gifResult;
+export default GifComponent;
