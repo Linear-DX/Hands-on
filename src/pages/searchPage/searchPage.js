@@ -63,7 +63,7 @@ const SearchPage = () => {
     const getGifs = async () => {
         const apiKey = process.env.REACT_APP_GIPHY_KEY;
         const gifs = await axios 
-        .get(`http://api.giphy.com/v1/gifs/search?q=${currentQuery}&api_key=${apiKey}&limit=12`)
+        .get(`https://api.giphy.com/v1/gifs/search?q=${currentQuery}&api_key=${apiKey}&limit=12`)
             .catch((err) => err);
         setGifs(gifs.data.data)
         console.log(gifs);
