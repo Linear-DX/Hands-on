@@ -2,6 +2,7 @@ import '../../App.css';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import { cyan } from '@mui/material/colors';
+import { orange } from '@mui/material/colors';
 
 // const SearchComponent = ({ handleSubmit, handleInput, keyword }) => {
 //     return (
@@ -15,11 +16,12 @@ import { cyan } from '@mui/material/colors';
 //edit
 
 const ColorButton = styled(Button)(({ theme }) => ({
-    color: theme.palette.getContrastText(cyan[500]),
-    backgroundColor: cyan[500],
+    color: theme.palette.getContrastText(orange[500]),
+    backgroundColor: orange[500],
     borderColor: '#ccc',
+    color: 'white',
     '&:hover': {
-      backgroundColor: cyan[700],
+      backgroundColor: orange[700],
       borderColor: '#030302',
       color: '#030302',
     },
@@ -27,8 +29,9 @@ const ColorButton = styled(Button)(({ theme }) => ({
 
 const SearchComponent = ({ handleSubmit, query, handleInput }) => {
     return (
-        <form onSubmit={handleSubmit}>
+        <form data-testid="searchBarForm" onSubmit={handleSubmit}>
             {/* <div className="search-wrapper"> */}
+            <label form='search'>Search</label><br/>
             <input id="search" type="text" value={query} onChange={handleInput} required/>
             <ColorButton variant="outlined" size="small" onClick={handleSubmit}>Search</ColorButton>
             {/* </div> */}
